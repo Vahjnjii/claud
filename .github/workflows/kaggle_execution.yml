@@ -163,13 +163,14 @@ jobs:
                     
                     push_dir = dest_dir
                 else:
-                    # Create new kernel - use source metadata without id_no
+                    # Create new kernel - use source metadata but set correct id for destination
                     source_metadata_file = source_dir / "kernel-metadata.json"
                     with open(source_metadata_file, 'r') as f:
                         metadata = json.load(f)
                     
-                    # Remove id and id_no for new kernel
-                    metadata.pop('id', None)
+                    # Set id to destination slug (required for new kernels)
+                    # Remove id_no (only exists for existing kernels)
+                    metadata['id'] = nb['dest_slug']  # e.g., "distinct4exist/new-20-1"
                     metadata.pop('id_no', None)
                     metadata['slug'] = nb['notebook_name']
                     metadata['title'] = nb['notebook_name']
@@ -178,7 +179,7 @@ jobs:
                     with open(source_metadata_file, 'w') as f:
                         json.dump(metadata, f, indent=2)
                     
-                    log(f"New kernel metadata: slug={metadata['slug']}", "📝")
+                    log(f"New kernel metadata: id={metadata['id']}, slug={metadata['slug']}", "📝")
                     push_dir = source_dir
                 
                 # STEP 4: Push to destination
