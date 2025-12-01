@@ -43,19 +43,16 @@ jobs:
             "distinct4exist": {
                 "username": "distinct4exist",
                 "key": "c2767798395ca8c007e931d6f9d42752"
-            },
-            "shreevathsaz": {
-                "username": "shreevathsaz",
-                "key": "2faa3199cb4f8a0d88a8999604ac6770"
             }
         }
 
+        # ALL 3 NOTEBOOKS → distinct4exist
         NOTEBOOKS = [
             {
                 "source_slug": "shreevathsbbhh/new-20-1", 
                 "notebook_name": "new-20-1", 
-                "dest_slug": "shreevathsaz/new-20-1",
-                "dest_account": "shreevathsaz"
+                "dest_slug": "distinct4exist/new-20-1",
+                "dest_account": "distinct4exist"
             },
             {
                 "source_slug": "shreevathsbbhh/war-2", 
@@ -223,6 +220,7 @@ jobs:
             start = datetime.utcnow()
             log(f"EXECUTION STARTED: {start.isoformat()}", "🚀")
             log(f"Total notebooks: {len(NOTEBOOKS)}", "📊")
+            log(f"Destination: distinct4exist (all 3)", "🎯")
             
             results = {}
             
