@@ -222,7 +222,10 @@ jobs:
                 log("═" * 60, "")
                 success = execute_notebook(nb)
                 results[nb['notebook_name']] = success
-                time.sleep(2)
+                
+                # CHANGED: Increased wait time to 60 seconds
+                log("Waiting 60 seconds before next action...", "⏳")
+                time.sleep(60)
             
             success_count = sum(results.values())
             duration = (datetime.utcnow() - start).total_seconds()
