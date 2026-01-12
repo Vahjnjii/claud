@@ -1,0 +1,11 @@
+# Video Processing
+moviepy>=1.0.3
+pillow>=9.0.0
+numpy>=1.21.0
+
+# Audio Processing and TTS
+openai-whisper>=20230314
+google-genai>=0.2.0
+
+# Utilities
+requests>=2.28.0

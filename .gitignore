@@ -1,0 +1,50 @@
+# API Keys and Tokens - NEVER commit these!
+api_keys.txt
+last_api_key.txt
+telegram_token.txt
+
+# Generated files
+*.pyc
+__pycache__/
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Output files
+exports/
+*.mp4
+*.wav
+*.srt
+*.json
+!requirements.txt
+!package.json
+
+# Temporary files
+temp_*/
+*.log
+*.tmp
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Font cache
+font_cache/
